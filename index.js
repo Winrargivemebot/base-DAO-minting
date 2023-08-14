@@ -34,7 +34,8 @@ async function connectWallet() {
 // Function to mint tokens
 async function mintTokens() {
     try {
-        const recipientAddress = '0xRecipientAddressHere'; // Update with the recipient's address
+        const recipientAddressInput = document.getElementById('recipient-address'); // Get the input field for recipient address
+        const recipientAddress = recipientAddressInput.value; // Get the value entered by the user
         const mintAmount = 100000; // Update with the desired minting amount
 
         // Call the minting function on the smart contract
@@ -44,6 +45,7 @@ async function mintTokens() {
         console.error('Error minting tokens:', error);
     }
 }
+
 
 // Attach event listeners to buttons
 document.getElementById('connect-wallet').addEventListener('click', connectWallet);
